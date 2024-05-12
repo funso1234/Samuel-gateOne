@@ -44,11 +44,15 @@ public static void main(String...args){
 
 		System.out.print(validateNumber.charAt(15));
 
+		
 
+		System.out.println("Your card is valid");
 	}
 
 
-	
+	else{
+		System.out.print("Your card is not valid");
+	}
 
 }
 
