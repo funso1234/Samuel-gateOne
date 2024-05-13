@@ -1,0 +1,20 @@
+import java.util.Date;
+import java.util.Scanner;
+public class MenstrualCycle {
+public static void main(String...args) {
+	Scanner input = new Scanner(System.in);
+
+
+	System.out.print("Enter your last menstrual flow date (yyyy-mm-dd): ");
+        LocalDate lastDate = LocalDate.parse(scanner.nextLine());
+
+        System.out.print("Enter the average menstrual cycle length in days: ");
+        int cycleLength = scanner.nextInt();
+
+        LocalDate nextMenstrualFlow = lastDate.plusDays(cycleLength);
+
+        LocalDate ovulationDate = lastDate.plusDays(cycleLength / 2);
+
+}
+
+}
