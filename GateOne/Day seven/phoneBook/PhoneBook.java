@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class PhoneBook {
@@ -27,6 +29,11 @@ public static void main(String...args){
 	6-> For Edit contact
 
 	""";
+
+	ArrayList<String> phoneBook = new ArrayList<String>();
+
+	ArrayList<String> contactNumber = new ArrayList<String>();
+
 
 	System.out.println("phoneBook");
 
