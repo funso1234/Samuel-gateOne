@@ -6,7 +6,7 @@ public static dateFormat(){
 	
 	System.out.println("Enter your date of birth: ");
 
-	input.replace(",", "").replace("-","").replace(".","").replace(";","").replace(" ", "")
+	input.replace(",", "").replace("-","").replace(".","").replace(";","").replace(" ", "");
 	input = integer.parseInt(0, 2);
 	newUser_day = int(userDay);
 	userMonth = integer.parseInt(2, 4);
