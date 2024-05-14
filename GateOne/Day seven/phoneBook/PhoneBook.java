@@ -6,6 +6,10 @@ public class PhoneBook {
 
 public static void main(String...args){
 
+	Scanner input = new Scanner(System.in);
+
+	ArrayList<String> myPhoneBook = new ArrayList<>();
+
 	System.out.print("WELCOME TO PHONEBOOK APP");
 
 	String phoneBook = """
@@ -30,33 +34,47 @@ public static void main(String...args){
 
 	""";
 
-	ArrayList<String> myPhoneBook = new ArrayList<>();
 
-	
 
 
 	System.out.println(phoneBook);
-
+	System.out.println("CHOOSE AN OPTION ");
 	System.out.println(prompt);
 
-	Scanner input = new Scanner(System.in);
+	
 
 	int userInput = input.nextInt();
+	input.nextLine();
 
 	
 	switch(userInput){
 	
-	case 1: System.out.println("Add contact");
+	case 1: System.out.println("Add contact ");
+		String addContact = input.nextLine();
+		myPhoneBook.add(addContact);
 
-	break;
+		System.out.println("Enter the number");
+		String number = input.nextLine();
+		myPhoneBook.add(number);
+		
+		System.out.println("Successfully saved");
+			break;
 
 	case 2: System.out.println("Remove contact");
+		String removedContact = input.nextLine();
+		myPhoneBook.add(removedContact);
 
-	break;
+		System.out.println("Delete the contact");
+		String deleteContact = input.nextLine();
+		myPhoneBook.add(deleteContact);
+
+		System.out.println("Successfully deleted"); 
+			break;
 
 	case 3: System.out.println("Contact by first name");
-
-	break;
+		String  firstName = input.nextLine();
+		myPhoneBook.add(firstName);
+			break;
 
 	case 4: System.out.println("Contact by last name");
 
