@@ -21,7 +21,8 @@ public static void main(String...args) {
 
         LocalDate nextMenstrualFlow = lastDate.plusDays(cycleLength);
 
-        LocalDate ovulationDate = lastDate.plusDays(cycleLength);
+        LocalDate ovulationDate = lastDate.plusDays(cycleLength / 2);
+
 
 	
 }

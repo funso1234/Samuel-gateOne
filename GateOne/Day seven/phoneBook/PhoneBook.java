@@ -12,7 +12,7 @@ public static void main(String...args){
 
 	Hi, Welcome
 
-	Press
+	Press""";
 
 	String prompt = """
 
@@ -30,19 +30,46 @@ public static void main(String...args){
 
 	""";
 
-	ArrayList<String> phoneBook = new ArrayList<String>();
-
-	ArrayList<String> contactNumber = new ArrayList<String>();
-
-
-	System.out.println("phoneBook");
-
-	Scanner input = new Scanner(System.in);
-
-	int userInput = input.nextLine();
+	ArrayList<String> myPhoneBook = new ArrayList<>();
 
 	
 
+
+	System.out.println(phoneBook);
+
+	System.out.println(prompt);
+
+	Scanner input = new Scanner(System.in);
+
+	int userInput = input.nextInt();
+
+	
+	switch(userInput){
+	
+	case 1: System.out.println("Add contact");
+
+	break;
+
+	case 2: System.out.println("Remove contact");
+
+	break;
+
+	case 3: System.out.println("Contact by first name");
+
+	break;
+
+	case 4: System.out.println("Contact by last name");
+
+	break;
+
+	case 5: System.out.print("Edit contact");
+
+	break;
+
+	default: System.out.println("You're blessed");
+
+
+	}
 
 
 	
