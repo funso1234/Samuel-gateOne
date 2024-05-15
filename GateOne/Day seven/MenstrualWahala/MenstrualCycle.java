@@ -1,5 +1,9 @@
 import java.time.LocalDate;
 
+import java.util.Period;
+
+import java.util.Date;
+
 import java.util.Scanner;
 
 public class MenstrualCycle {
@@ -10,8 +14,15 @@ public static void main(String...args) {
 
 	LocalDate now = LocalDate.now();
 
+	
+	System.out.println("Enter the first day of menstrual flow (yyyy-mm-dd): ");
+	String firstDay = input.nextLine();
 
-	System.out.print("Enter your last menstrual flow date (yyyy-mm-dd): ");
+	System.out.println("Enter your last day of menstrual flow (yyyy-mm-dd): ");
+	String lastDay = input.nextLine();
+
+	System.out.printlm("Enter the day of your menstrual flow: ");
+	int daysOfMenstrualFlow = input.nextLine();
 
         LocalDate lastDate = LocalDate.parse(input.nextLine());
 
