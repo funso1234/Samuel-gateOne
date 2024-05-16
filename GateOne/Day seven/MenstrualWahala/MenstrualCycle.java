@@ -1,8 +1,6 @@
 import java.time.LocalDate;
 
-import java.util.Period;
-
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
 
 import java.util.Scanner;
 
@@ -21,18 +19,22 @@ public static void main(String...args) {
 	System.out.println("Enter your last day of menstrual flow (yyyy-mm-dd): ");
 	String lastDay = input.nextLine();
 
-	System.out.printlm("Enter the day of your menstrual flow: ");
-	int daysOfMenstrualFlow = input.nextLine();
+	LocalDate lastDateOfFlow = LocalDate.parse(lastDay, DateTimeFormatter.ofPattern("yyyy-mm-dd"));
+
+	System.out.println("Enter the day of your menstrual flow: "); 
+	int daysOfMenstrualFlow = input.nextInt();
+
+        System.out.print("Enter the average menstrual cycle length in days: ");
+	int cycleLength = input.nextInt();
+
+
+	LocalDate today = LocalDate.now();
 
         LocalDate lastDate = LocalDate.parse(input.nextLine());
 
-        System.out.print("Enter the average menstrual cycle length in days: ");
-
-        int cycleLength = input.nextInt();
-
         LocalDate nextMenstrualFlow = lastDate.plusDays(cycleLength);
 
-        LocalDate ovulationDate = lastDate.plusDays(cycleLength / 2);
+        LocalDate ovulationDate = lastDate.plusDays(cycleLength);
 
 
 	

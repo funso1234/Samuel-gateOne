@@ -4,11 +4,21 @@ import java.util.Scanner;
 
 public class PhoneBook {
 
+static ArrayList<String> phoneNumber = new ArrayList<>();
+static ArrayList<String> firstName = new ArrayList<>();
+static ArrayList<String> lastName = new ArrayList<>();
+static ArrayList<String> Name = new ArrayList<>();
+
 public static void main(String...args){
 
-	Scanner input = new Scanner(System.in);
+	phoneBookApp();
 
-	ArrayList<String> myPhoneBook = new ArrayList<>();
+	}
+
+
+	public static void phoneBookApp(){
+
+	Scanner input = new Scanner(System.in);
 
 	System.out.print("WELCOME TO PHONEBOOK APP");
 
@@ -17,25 +27,27 @@ public static void main(String...args){
 	Hi, Welcome
 
 	Press""";
+	
+
 
 	String prompt = """
 
 	1-> For Add contact
 
-	2-> For Remove contact
+	2-> Remove contact
 
-	3-> For Find contact by phone number
+	3-> Find contact by phone number
 
-	4-> For Find contact by first name 
+	4-> Find contact by first name 
 
-	5-> For Find contact by last name 
+	5-> Find contact by last name 
 
-	6-> For Edit contact
+	6-> Edit contact
+
+	7-> Exit
 
 	""";
-
-
-
+	
 
 	System.out.println(phoneBook);
 	System.out.println("CHOOSE AN OPTION ");
@@ -46,48 +58,88 @@ public static void main(String...args){
 	int userInput = input.nextInt();
 	input.nextLine();
 
-	
 	switch(userInput){
 	
-	case 1: System.out.println("Add contact ");
-		String addContact = input.nextLine();
-		myPhoneBook.add(addContact);
+	case 1-> addContact();
 
-		System.out.println("Enter the number");
-		String number = input.nextLine();
-		myPhoneBook.add(number);
+	case 2-> removeContact();
+
 		
-		System.out.println("Successfully saved");
-			break;
-
-	case 2: System.out.println("Remove contact");
-		String removedContact = input.nextLine();
-		myPhoneBook.add(removedContact);
-
-		System.out.println("Delete the contact");
-		String deleteContact = input.nextLine();
-		myPhoneBook.add(deleteContact);
-
-		System.out.println("Successfully deleted"); 
-			break;
-
-	case 3: System.out.println("Contact by first name");
-		String  firstName = input.nextLine();
-		myPhoneBook.add(firstName);
-			break;
-
-	case 4: System.out.println("Contact by last name");
-
-	break;
-
-	case 5: System.out.print("Edit contact");
-
-	break;
-
-	default: System.out.println("You're blessed");
 
 
 	}
+
+	}
+
+	static void addContact() {
+
+	Scanner input =  new Scanner(System.in);
+
+
+	System.out.println("Enter your name: ");
+	String Name = input.nextLine();
+	firstName.add(Name);
+
+	System.out.println("Enter the number: ");
+	String number = input.nextLine();
+	phoneNumber.add(number);
+
+		addMoreContact();
+   
+        }
+      
+	public static void addMoreContact(){
+	
+	Scanner input =  new Scanner(System.in);
+
+		
+	System.out.println("Do you still want to add more contact(Yes/No)? ");  
+	String addMore = input.next();  
+
+	if (addMore .equalsIgnoreCase("yes")){
+		addContact();
+	}
+	else{
+		System.out.println("<<<<<<<<<Successfully Saved>>>>>>>>>>>>");
+		phoneBookApp();
+
+	}
+	}
+
+	
+	static void removeContact(){
+
+	Scanner input = new Scanner(System.in);
+
+	String surName;
+	String lastName;
+	String number;
+
+	System.out.println("Remove contact");
+
+	String removedContact = input.nextLine();
+
+	for(int count = 0; count < firstName.size(); count++){
+
+	surName = firstName.get(count);
+
+	if (surName.equals(removedContact)){
+
+	firstName.remove(surName);
+
+	System.out.println(">>>>>>>>Successfully removed<<<<<<<<<<");
+	}
+
+	else{
+		System.out.println("Contact not found");
+		phoneBookApp();
+
+
+	} 
+	}
+
+
+		
 
 
 	
